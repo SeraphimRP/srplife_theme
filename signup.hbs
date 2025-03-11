@@ -1,0 +1,57 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<div class="site-content-wrap">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="post-wrap">
+                    <article class="post-single page">
+                        <div class="post-header d-flex">
+                            <div class="header-content-wrap text-center">
+                                <h1 class="post-title text-center">{{t "Choose your subscription plan"}}</h1>
+                            </div>
+                        </div>
+                        <div class="members-page-content">
+                            <div class="members-page-subtitle text-center">
+                                {{t "Unlock full access to"}} my blog{{t "and see the entire library of members-only content & updates"}}
+                            </div>
+                            <div class="membership-switch" id="membership-duration" data-active-duration="yearly">
+                                <button class="btn" data-duration="monthly">Monthly</button>
+                                <button class="btn" data-duration="yearly">Yearly</button>
+                            </div>
+                            <div class="pricing-table-wrap">
+                                {{#if @member}}
+                                <script>window.location = '{{@site.url}}/account/';</script>
+                                {{else}}
+                                {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tiers|}}
+                                {{#foreach tiers}}
+                                    {{> members/pricing-table}}
+                                {{/foreach}}
+                                {{/get}}
+                                {{/if}}
+                            </div>
+                            <div class="text-center member-alternate-link">
+                                {{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#contentFor "scripts"}}
+<script>
+    let switcher  = document.getElementById('membership-duration');
+    let pricingTables = document.querySelectorAll('.pricing-table');
+    switcher.querySelectorAll('button').forEach((el)=> {
+        el.addEventListener('click', (e)=> {
+            let activeDuration= e.target.getAttribute('data-duration')
+            switcher.setAttribute('data-active-duration', activeDuration)
+            pricingTables.forEach((table)=> {
+                table.setAttribute('data-active-duration', activeDuration)
+            })
+        })
+    })
+</script>
+{{/contentFor}}

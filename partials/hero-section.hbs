@@ -1,0 +1,49 @@
+<section class="hero-area">
+    <div class="container-fluid">
+        <div class="row hero-row">
+            <div class="col-lg-6 col-xl-5 offset-xl-1 d-flex align-items-center">
+                <div class="intro-wrap">
+                    {{#if @custom.home_hero_title}}
+                        <h1 class="intro">
+                            {{@custom.home_hero_title}}
+                        </h1>
+                    {{/if}}
+                    {{#if @custom.home_hero_description}}
+                        <h2 class="by-line h3">{{@custom.home_hero_description}}</h2>
+                    {{/if}}
+                    <div class="hero-form-wrap">
+                        <div class="description">
+                            {{t "I send posts digest once in a month. No spam ever, I promise."}}
+                        </div>
+                        {{#if @custom.show_home_hero_subscription_form}}
+                        <form class="members-form hero-form" data-members-form="subscribe">
+                            <div class="input-group">
+                                <label for="email" class="sr-only">{{t "Email"}}</label>
+                                <input data-members-email type="email" class="form-control" placeholder="{{t "Your email address"}}" required/>
+                                <div class="input-group-append">
+                                    <button class="submit-btn btn btn-primary" type="submit"><span class="loading-spinner"></span>{{t "Subscribe"}}</button>
+                                </div>
+                            </div>
+                            <div class="messages-wrap text-center">
+                                <div class="message-success">
+                                    <strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to confirm the subscription."}}
+                                </div>
+                                <div class="message-error">
+                                    <strong>{{t "Error!"}}</strong> {{t "Please enter a valid email address!"}}
+                                </div>
+                            </div>
+                        </form>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            {{#if @custom.home_hero_head_shot_image}}
+            <div class="col-lg-6 col-xl-5">
+                <div class="headshot-wrap">
+                    <img src="{{@custom.home_hero_head_shot_image}}" alt="Head shot portrait" class="headshot">
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</section>

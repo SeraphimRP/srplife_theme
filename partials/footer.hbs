@@ -1,0 +1,22 @@
+<footer class="site-footer text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                {{^if @member}}
+                {{#is "index, post, page, tag, author"}}
+                {{> subscription}}
+                {{/is}}
+                {{/if}}
+                <!--{{> social-links}}-->
+                <!--{{navigation type="secondary"}}-->
+                <div class="copyright">
+                    {{#if @custom.copyright_text_override}}
+                        {{@custom.copyright_text_override}}
+                    {{else}}
+                        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> - {{{t "Published with {ghostLink}" ghostLink="<a href=\"https://ghost.org/\">Ghost</a>"}}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

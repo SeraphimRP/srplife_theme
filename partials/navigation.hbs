@@ -1,0 +1,14 @@
+{{#unless isSecondary}}
+<ul class="nav-list">
+{{#foreach navigation}}
+<li class="{{slug}} nav-item{{#if current}} nav-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+{{/foreach}}
+{{else}}
+<nav class="secondary-nav-wrap">
+    <ul class="secondary-nav-list">
+    {{#foreach navigation}}
+    <li class="{{slug}} nav-item{{#if current}} nav-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+    </ul>
+</nav>
+{{/unless}}

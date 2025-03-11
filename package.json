@@ -1,0 +1,142 @@
+{
+    "name": "advant",
+    "description": "Minimal personal blog theme",
+    "demo": "http://advant.gbjsolution.com",
+    "version": "4.1.0",
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "GBJ solution",
+        "email": "gbjsolution@gmail.com",
+        "url": "https://gbjsolution.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs",
+            "Magazine Layouts"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "personal",
+        "minimal"
+    ],
+    "scripts": {
+        "dist": "gulp css && gulp ampcss && gulp concat-js && gulp build && gulp zip"
+    },
+    "config": {
+        "posts_per_page": 6,
+        "card_assets": {
+            "exclude": [
+                "bookmark",
+                "gallery"
+            ]
+        },
+        "custom": {
+            "logo_for_light_mode": {
+                "type": "image"
+            },
+            "default_theme_mode": {
+                "type": "select",
+                "options": [
+                    "dark",
+                    "light"
+                ],
+                "default": "dark"
+            },
+            "show_theme_mode_switcher_icon": {
+                "type": "boolean",
+                "default": true
+            },
+            "post_list_container_width": {
+                "type": "select",
+                "options": [
+                    "narrow",
+                    "full-width"
+                ],
+                "default": "narrow"
+            },
+            "copyright_text_override": {
+                "type": "text",
+                "default": ""
+            },
+            "show_home_hero_section": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "home_hero_title": {
+                "type": "text",
+                "default": "Hello,",
+                "group": "homepage"
+            },
+            "home_hero_description": {
+                "type": "text",
+                "default": "Welcome to my blog.",
+                "group": "homepage"
+            },
+            "show_home_hero_subscription_form": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "home_hero_head_shot_image": {
+                "type": "image",
+                "group": "homepage"
+            },
+            "show_share_buttons": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_author_info_card": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            }
+        },
+        "image_sizes": {
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.2",
+        "browser-sync": "^2.27.7",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-wait": "0.0.2",
+        "gulp-zip": "^5.1.0",
+        "merge2": "^1.4.1",
+        "postcss-css-variables": "^0.18.0",
+        "sass": "^1.49.7"
+    },
+    "dependencies": {
+        "postcss": "^8.4.6"
+    }
+}
