@@ -105,7 +105,7 @@ function positionSidenotes() {
       }
     }
 
-    sidenote.style.top = `${Math.round(newPosition - anchorParentPosition)}px`;
+    sidenote.style.top = `calc(${Math.round(newPosition - anchorParentPosition)}px - 15vh)`;
   }
 }
 
