@@ -105,7 +105,17 @@ function positionSidenotes() {
       }
     }
 
-    sidenote.style.top = `calc(${Math.round(newPosition - anchorParentPosition)}px - 15vh)`;
+    let offset = Math.round(newPosition - anchorParentPosition);
+    if (offset != 0) {
+        sidenote.style.top = `${offset}px`;
+    }
+
+    // let offset = Math.round(newPosition - anchorParentPosition);
+    // if (offset != 0) {
+    //     sidenote.style.top = `calc(${offset}px - calc(${i + 1} * 3.25vh))`;
+    // } else if (i > 0) {
+    //     sidenote.style.top = `calc(-15vh - calc(${i + 1} * 6.5vh))`
+    // }
   }
 }
 
