@@ -1,3 +1,10 @@
+:root {
+    --grid--header--narrow: 160px 1fr;
+	--grid--narrow: 1fr;
+	--grid--base: calc(50vw - 37.25rem) [content-bleed-start] 1fr [content-gutter-start] 100px [content-start] repeat(6, [col-start] 1fr) [content-end] 100px [content-gutter-end] 1fr [content-bleed-end] calc(50vw - 37.25rem);
+	--grid--wide: calc(50vw - 31.25rem) [content-bleed-start] 1fr [content-gutter-start] 100px [content-start] repeat(6, [col-start] 1fr) [content-end] 100px [content-gutter-end] 1fr [content-bleed-end] calc(50vw - 31.25rem);
+}
+
 body {
     font-family: $font-body;
     background-color: var(--bg-color);
@@ -331,4 +338,47 @@ hr {
 }
 .fade-in-up {
     animation: fadeInUp 0.5s cubic-bezier(0.24, 0.46, 0.32, 0.87) both;
+}
+
+/* Sidenotes */
+
+.hide-sidenotes .notes-wrapper {
+	display: none;
+}
+
+.hide-endnotes .footnotes-sep,
+.hide-endnotes .footnotes {
+	display: none;
+}
+
+.notes-wrapper {
+	position: relative;
+	margin-left: .5em;
+    float: right;
+}
+
+.note-identifier {
+	font-family: var(--font--sans);
+	left: -34px;
+	position: absolute;
+	text-align: right;
+	width: 28px;
+}
+
+.note {
+	position: absolute;
+    font-size: .8rem;
+    left: 5em;
+    padding: 5px 10px;
+    top: -15vh !important;
+    width: 210px;
+}
+
+.notes-wrapper .note > p {
+	margin: 0 !important;
+}
+
+.active-sidenote {
+	background-color: #24273a;
+	border: 1px dotted var(--ghost-accent-color);
 }
