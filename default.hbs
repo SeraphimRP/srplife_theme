@@ -14,7 +14,7 @@
             {{> styles/app-css}}
         </style>
 
-		<script>
+		<script data-cfasync="false">
 			if(typeof(Storage) !== 'undefined') {
                 if (localStorage.getItem('selected-theme') == 'light') {
 					document.documentElement.setAttribute('data-theme', 'light');
