@@ -1,5 +1,5 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
 {{#post}}
 <div class="site-content-wrap">
     <div class="container-fluid">
@@ -15,9 +15,10 @@
                                 <div class="primary-tag text-center"><a href="{{url}}">{{name}}</a></div>
                                 {{/primary_tag}}
                                 <h1 class="post-title text-center p-name">{{title}}</h1>
+                                <span class="post-subtitle text-center">{{excerpt}}</span>
                                 <div class="post-meta mx-auto d-flex justify-content-between">
                                     <div class="reading-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
-                                    <time class="date dt-published" datetime="{{date format="YYYY-MM-DD hh:mm:ss"}}">{{date format="DD MMMM YYYY"}}</time>
+                                    <time class="date dt-published" datetime="{{date format=" YYYY-MM-DD hh:mm:ss"}}">{{date format="DD MMMM YYYY"}}</time>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +28,8 @@
                             {{else}}
                             {{{html}}}
                             <div class="no-access-message">
-                                {{t "You don't have access to this post on"}} <strong>{{@site.title}}</strong> {{t "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access."}}
+                                {{t "You don't have access to this post on"}} <strong>{{@site.title}}</strong> {{t
+                                "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access."}}
                             </div>
                             <div class="post-upgrade-cta-box text-center">
                                 {{#if @member}}
@@ -35,8 +37,8 @@
                                 {{else}}
                                 <h2 class=" cta-title">{{t "This post is for subscribers only"}}</h2>
                                 {{/if}}
-                                <a class="btn btn-secondary btn-cta" href="{{@site.url}}/signup/">{{t "Subscribe now"}}</a>
-                                <p class="sign-in-cta"><small>{{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a></small></p>
+                                <a class="btn btn-secondary btn-cta" href="{{@site.url}}/#/portal/signup">{{t "Subscribe now"}}</a>
+                                <p class="sign-in-cta"><small>{{t "Already have an account?"}} <a href="{{@site.url}}/#/portal/signin">{{t "Sign in"}}</a></small></p>
                             </div>
                             {{/if}}
                         </div>
@@ -50,7 +52,7 @@
                             {{#if @custom.show_share_buttons}}
                             {{> share}}
                             {{/if}}
-                            {{comments title="Comments" count=false mode="dark" saturation=80}}
+                            {{comments title="Comments" count=false mode="auto" saturation=80}}
                         </div>
                     </article>
                 </div>

@@ -1,5 +1,5 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
 <div class="inner-wrap-container">
     <div class="site-content-wrap">
         <div class="container-fluid">
@@ -24,12 +24,12 @@
                 {{#foreach tags}}
                 <div class="col-md-4 col-sm-6 card-wrap fade-in-up">
                     <a href="{{url}}">
-                    <div class="card-single tag-card text-center d-flex h-100 align-items-center{{#if feature_image}} has-image" style="background-image:url({{feature_image}});{{/if}}">
-                        <div class="inner-content mx-auto">
-                            <h2 class="tag-name h3">{{name}}</h2>
-                            <div class="post-count">{{plural count.posts empty=(t "0 Post") singular=(t "1 Post") plural=(t "% Posts")}}</div>
+                        <div class="card-single tag-card text-center d-flex h-100 align-items-center{{#if feature_image}} has-image" style="background-image:url({{feature_image}});{{/if}}">
+                            <div class="inner-content mx-auto">
+                                <h2 class="tag-name h3">{{name}}</h2>
+                                <div class="post-count">{{plural count.posts empty=(t "0 Post") singular=(t "1 Post") plural=(t "% Posts")}}</div>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 </div>
                 {{/foreach}}

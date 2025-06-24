@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}" data-layout="{{@custom.post_list_container_width}}" data-theme="{{@custom.default_theme_mode}}">
 	<head>
-		{{! Document Settings }}
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{{! Page Meta }}
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 		<title>{{meta_title}}</title>
-		{{! Styles'n'Scripts }}
-		{{!<link type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700%7CEB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">}}
-		<link type="text/css" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-		<style id="bundle-css">
-            {{> styles/bundle-css}}
+
+		<link type="text/css" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+			rel="stylesheet">
+
+		<style id="app-css">
+            {{> styles/app-css}}
         </style>
-		{{! Ghost outputs important style and meta data with this tag }}
+
 		<script>
 			if(typeof(Storage) !== 'undefined') {
                 if (localStorage.getItem('selected-theme') == 'light') {
@@ -24,44 +24,35 @@
 				}
             }
 		</script>
+
+		<script src="{{asset "js/app.min.js"}}"></script>
+
 		{{ghost_head}}
-		<script>
-			// Define googlefc and the controlled messaging function on the Window.
-			window.googlefc = window.googlefc || {};
-			googlefc.controlledMessagingFunction = async (message) => {
-			{{#if @member.paid}}
-				message.proceed(false);
-			{{else}}
-				message.proceed(true);
-			{{/if}}
-			}
-		</script>
 	</head>
 	<body class="{{body_class}}">
-		{{! insert header partial}}
 		{{> header}}
-        <main class="main-content-area">
-        {{{body}}}
+
+		<main class="main-content-area">
+			{{{body}}}
 		</main>
-        {{! insert footer partial}}
-        {{> footer}}
+
+		{{> footer}}
 		{{> search-popup}}
-		{{> members/notifications}}
-		{{! scripts}}
-        <script>
-			var apiKey = `{{> api-key}}`.trim();
-            var nextPage = '{{pagination.next}}';
-            var totalPages = '{{pagination.pages}}';
+
+		<script>
+			var nextPage = '{{pagination.next}}';
+			var totalPages = '{{pagination.pages}}';
 			if(typeof(Storage) !== 'undefined') {
                 if (localStorage.getItem('selected-theme') == 'light' || document.documentElement.getAttribute('data-theme') == 'light') {
 					document.getElementById('switch_theme').checked = true;
                 }
             }
         </script>
-		{{!-- The #block helper will pull in data from the #contentFor other template files. --}}
+
 		{{{block "scripts"}}}
-		<script src="{{asset "js/app.bundle.min.js"}}"></script>
 		<script src="{{asset "js/sidenotes.js"}}"></script>
-        {{ghost_foot}}
+		<script defer src="{{asset "js/vendor/katex.min.js"}}"></script>
+		<script defer src="{{asset "js/vendor/katex-auto-render.min.js"}}" onload="renderMathInElement(document.body);"></script>
+		{{ghost_foot}}
 	</body>
 </html>

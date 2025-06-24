@@ -1,9 +1,11 @@
 .post-list {
     margin-top: 80px;
+
     .post {
         margin-bottom: 80px;
         min-height: 280px;
     }
+
     .post-thumbnail-wrap {
         .post-thumbnail {
             width: 100%;
@@ -12,9 +14,11 @@
             object-fit: cover;
         }
     }
+
     .post-container {
         position: relative;
     }
+
     .watermark {
         font-family: $font-title;
         font-size: 24rem;
@@ -24,6 +28,7 @@
         top: -0.46em;
         pointer-events: none;
     }
+
     .date {
         font-size: 0.875rem;
         text-transform: uppercase;
@@ -35,24 +40,28 @@
         transform: rotate(270deg);
         transform-origin: 0 0;
     }
+
     .primary-tag {
         font-size: 0.875rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-bottom: 16px;
+
         a {
-            color: $accent-color;
+            color: var(--accent-color);
             position: relative;
+
             &::before {
                 content: "";
                 width: 0;
                 height: 1px;
-                background: $accent-color;
+                background: var(--accent-color);
                 position: absolute;
                 bottom: -4px;
                 visibility: hidden;
                 transition: width 0.2s ease;
             }
+
             &:hover {
                 &::before {
                     width: 100%;
@@ -61,31 +70,38 @@
             }
         }
     }
+
     .featured-label {
-        background: $accent-color;
+        background: var(--accent-color);
         color: #000;
         font-size: 0.75rem;
         padding: 0px 8px;
         margin-left: 8px;
 
     }
+
     .post-title {
         margin-bottom: 32px;
-        a, a:hover {
+
+        a,
+        a:hover {
             color: var(--text-title);
         }
     }
+
     .separator {
         height: 2px;
-        background-color: $accent-color;
+        background-color: var(--accent-color);
         margin-bottom: 16px;
     }
+
     .reading-time {
         font-size: 0.875rem;
         text-transform: uppercase;
         color: var(--text-light);
     }
 }
+
 [data-theme="light"] {
     .post-list {
         .watermark {
@@ -93,10 +109,12 @@
         }
     }
 }
+
 .end-message {
     color: var(--text-light);
     font-size: 0.875rem;
 }
+
 @media screen and (max-width: 575px) {
     .post-list {
         .post-thumbnail-wrap {
@@ -106,57 +124,71 @@
         }
     }
 }
+
 @media screen and (max-width: 767px) {
     .post-list {
         .post-thumbnail-wrap {
             padding-bottom: 24px;
         }
+
         .post-container {
             padding: 40px 0px 0px 40px;
         }
+
         .watermark {
             left: -15px;
             font-size: 18rem;
         }
+
         .date {
             left: -7px;
             width: 196px;
             top: 196px;
         }
+
         .post-title {
             font-size: 2rem;
         }
     }
 }
+
 @media screen and (min-width:768px) {
     .post-list {
         .post:nth-child(odd) {
             .row {
                 flex-direction: row-reverse;
             }
+
             .post-thumbnail-wrap {
                 margin-left: 30px;
             }
+
             .post-container {
                 padding: 40px 0px 0px 108px;
             }
+
             .watermark {
                 left: 0px;
             }
+
             .date {
                 left: 16px;
             }
         }
+
         .post:nth-child(even) {
             .post-thumbnail-wrap {
                 margin-right: 30px;
             }
+
             .post-container {
                 padding: 40px 108px 0px 0px;
             }
+
             .watermark {
                 right: 0px;
             }
+
             .date {
                 transform-origin: 100% 100%;
                 top: -21px;

@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "[handlebars]": {
+        "editor.wordWrapColumn": 200,
+        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
+    },
+    "[scss]": {
+        "editor.suggest.insertMode": "replace"
+    }
+}

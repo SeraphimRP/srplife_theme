@@ -1,10 +1,12 @@
 .card-wrap {
     margin-bottom: 30px;
 }
+
 .card-single {
     padding: 32px 24px;
     position: relative;
     min-height: 200px;
+
     &:before {
         content: "";
         position: absolute;
@@ -14,13 +16,16 @@
         width: 100%;
         background-color: rgba(#000, 0.22);
     }
+
     .inner-content {
         position: relative;
+
         .avatar {
             width: 96px;
             height: 96px;
             object-fit: cover;
             margin-bottom: 16px;
+
             &.no-image {
                 svg {
                     width: 100%;
@@ -29,8 +34,11 @@
                 }
             }
         }
-        .tag-name, .author-name a {
+
+        .tag-name,
+        .author-name a {
             position: relative;
+
             &::before {
                 content: "";
                 position: absolute;
@@ -38,22 +46,27 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background: $accent-color;
+                background: var(--accent-color);
                 transition: width 0.3s;
             }
         }
+
         .author-name {
             margin-bottom: 16px;
+
             a {
                 color: var(--text-title);
+
                 &:hover {
                     color: var(--text-title);
+
                     &:before {
                         width: 100%;
                     }
                 }
             }
         }
+
         .post-count {
             margin-top: 16px;
             font-size: 0.875rem;
@@ -61,67 +74,86 @@
             text-transform: uppercase;
             color: var(--text-title);
         }
+
         .bio {
             margin-top: 16px;
         }
+
         .meta-info {
             padding: 0;
             margin-top: 24px;
             color: var(--text-body);
+
             li {
                 margin: 0px 4px 8px;
                 display: inline-block;
                 list-style: none;
+
                 svg {
                     width: 20px;
                     height: 20px;
                 }
+
                 &.location {
                     svg {
                         margin-right: 4px;
                     }
                 }
+
                 a {
                     color: var(--text-body);
+
                     &:hover {
-                        color: $accent-color;
+                        color: var(--accent-color);
                     }
                 }
             }
         }
     }
+
     &.has-image {
         background-size: cover;
         background-position: center center;
         color: #fff;
+
         &:before {
             background-color: rgba(#000, 0.6);
         }
+
         .inner-content {
-            .tag-name, .post-count, .bio {
+
+            .tag-name,
+            .post-count,
+            .bio {
                 color: #fff;
             }
+
             .author-name {
                 a {
                     color: #fff;
+
                     &:hover {
                         color: #fff;
                     }
                 }
             }
+
             .meta-info {
                 color: #fff;
+
                 li {
                     a {
                         color: #fff;
+
                         &:hover {
-                            color: $accent-color;
+                            color: var(--accent-color);
                         }
                     }
                 }
             }
         }
     }
+
     &:hover {
         .tag-name {
             &::before {
@@ -130,6 +162,7 @@
         }
     }
 }
+
 [data-theme="light"] {
     .card-single:not(.has-image) {
         &:before {

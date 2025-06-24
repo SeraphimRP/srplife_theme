@@ -1,37 +1,59 @@
-/*=====================================================
-    Fonts
-=====================================================*/
-$accent-color: var(--ghost-accent-color); // #FDA403; /* theme highlight/primary color */
-$success: #0ca910;
-$error: #f0134d;
-
 $theme-light: (
-    bg-color: #FFFFFF,
-    text-title: #161616,
-    text-body: #313131,
-    text-light: #929399,
+    // crust
+    bg-color: #dce0e8,
+
+    // subtext 1
+    text-title: #5c5f77,
+
+    // text
+    text-body: #4c4f69,
+
+    // subtext 0
+    text-light: #6c6f85,
+
+    // lavender
+    accent-color: #7287fd,
+
+    // green
+    success: #40a02b,
+
+    // red
+    error: #d20f39,
 );
 
 $theme-dark: (
-    bg-color: #181926, // original: #252733
-    text-title: #b8c0e0, // original: #FFFFFF
-    text-body: #cad3f5, // original: #D5D5D5
-    text-light: #a5adcb, // original: #929399
-);
+    // crust
+    // original: #252733
+    bg-color: #181926,
 
-/*=====================================================
-    Fonts
-=====================================================*/
-// $font-body: 'Lora', 'Noto Sans', sans-serif;
-// $font-title: 'EB Garamond', serif;
+    // subtext 1
+    // original: #FFFFFF
+    text-title: #b8c0e0,
+
+    // text
+    // original: #D5D5D5
+    text-body: #cad3f5,
+
+    // subtext 0
+    // original: #929399
+    text-light: #a5adcb,
+
+    // blue
+    accent-color: #8aadf4,
+
+    // green
+    success: #a6da95,
+
+    // red
+    error: #ed8796,
+);
 
 $font-body: 'Newsreader', 'Noto Sans', sans-serif;
 $font-title: 'Lora', serif;
 
-/*=====================================================
-    Please don't edit below code if you are not sure
-=====================================================*/
-:root { 
+
+// distributing the values according to each theme
+:root {
     @each $name, $value in $theme-dark {
         --#{$name}: #{$value};
     }

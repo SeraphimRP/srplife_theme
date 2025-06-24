@@ -1,8 +1,8 @@
 {
-    "name": "advant",
-    "description": "Minimal personal blog theme",
-    "demo": "http://advant.gbjsolution.com",
-    "version": "4.1.0",
+    "name": "srplife",
+    "description": "Theme for srp.life, based off GBJSolution's Advant theme.",
+    "demo": "http://srp.life",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -31,7 +31,7 @@
         "minimal"
     ],
     "scripts": {
-        "dist": "gulp css && gulp ampcss && gulp concat-js && gulp build && gulp zip"
+        "dist": "gulp css && gulp concat-js && gulp build && gulp zip"
     },
     "config": {
         "posts_per_page": 6,

@@ -3,14 +3,14 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="logo">
                 {{#if @site.logo}}
-                    <a href="{{@site.url}}" class="logo-image" id="logo">
-                        <img src="{{@site.logo}}" alt="{{@site.title}}">
-                    </a>
-                    <a href="{{@site.url}}" class="logo-image" id="logo-alternete">
-                        <img {{#if @custom.logo_for_light_mode}}src="{{@custom.logo_for_light_mode}}"{{else}}src="{{@site.logo}}"{{/if}} alt="{{@site.title}}">
-                    </a>
+                <a href="{{@site.url}}" class="logo-image" id="logo">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                </a>
+                <a href="{{@site.url}}" class="logo-image" id="logo-alternete">
+                    <img {{#if @custom.logo_for_light_mode}}src="{{@custom.logo_for_light_mode}}" {{else}}src="{{@site.logo}}"{{/if}} alt="{{@site.title}}">
+                </a>
                 {{else}}
-                    <a href="{{@site.url}}" class="logo-text">{{@site.title}}</a>
+                <a href="{{@site.url}}" class="logo-text">{{@site.title}}</a>
                 {{/if}}
             </div>
             <nav class="nav-wrap d-none d-lg-block">

@@ -1,0 +1,11 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:-daily-orthodox
+
+taxonomies:
+  tag: /t/{slug}/
+  author: /author/{slug}/
