@@ -335,21 +335,14 @@ mark {
     background-color: yellow;
 }
 
-pre code,
-pre code.hljs {
+pre code {
     line-height: 1.75;
     padding: 1rem 1.5rem;
 }
 
-code:not(.hljs) {
+code {
     background: rgba(#000, 0.5);
     padding: 0.25rem 0.5rem;
-}
-
-[data-theme="light"] {
-    code:not(.hljs) {
-        background: rgba(#000, 0.05);
-    }
 }
 
 iframe {
