@@ -110,7 +110,7 @@
         }
 
         a {
-            background: linear-gradient(#fda403, #fda403);
+            background: linear-gradient(var(--accent-color), var(--accent-color));
             background-position: 0px 100%;
             background-size: 0 1px;
             background-repeat: no-repeat;
