@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .main-content-area {
     overflow: hidden;
     flex-grow: 1;
@@ -64,7 +66,6 @@
             position: relative;
             background-size: cover;
             background-position: center center;
-            color: #fff;
 
             &::before {
                 content: '';
@@ -75,10 +76,6 @@
                 top: 0;
                 left: 0;
                 z-index: 1;
-            }
-
-            .post-title {
-                color: #fff;
             }
         }
     }
@@ -538,6 +535,12 @@
 
 [data-theme="light"] {
     .post-single {
+        .post-header {
+            .post-title, .post-meta {
+                color: map.get($theme-dark, "text-body");
+            }
+        }
+
         .post-content {
             .kg-bookmark-container {
                 border-color: rgba(#000, 0.04);

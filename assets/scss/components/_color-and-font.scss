@@ -1,51 +1,51 @@
 $theme-light: (
     // crust
-    bg-color: #dce0e8,
+    bg-color: #ebdbb2,
 
     // subtext 1
-    text-title: #5c5f77,
+    text-title: #1d2021,
 
     // text
-    text-body: #4c4f69,
+    text-body: #282828,
 
     // subtext 0
-    text-light: #6c6f85,
+    text-light: #504945,
 
     // lavender
-    accent-color: #7287fd,
+    accent-color: #689d6a,
 
     // green
-    success: #40a02b,
+    success: #b8bb26,
 
     // red
-    error: #d20f39,
+    error: #fb4934,
 );
 
 $theme-dark: (
     // crust
     // original: #252733
-    bg-color: #181926,
+    bg-color: #282828,
 
     // subtext 1
     // original: #FFFFFF
-    text-title: #b8c0e0,
+    text-title: #ebdbb2,
 
     // text
     // original: #D5D5D5
-    text-body: #cad3f5,
+    text-body: #ebdbb2,
 
     // subtext 0
     // original: #929399
-    text-light: #a5adcb,
+    text-light: #bdae93,
 
     // blue
-    accent-color: #8aadf4,
+    accent-color: #689d6a,
 
     // green
-    success: #a6da95,
+    success: #b8bb26,
 
     // red
-    error: #ed8796,
+    error: #fb4934,
 );
 
 $font-body: 'Newsreader', 'Noto Sans', sans-serif;
