@@ -337,10 +337,9 @@ mark {
 
 pre code {
     line-height: 1.75;
-    padding: 1rem 1.5rem;
 }
 
-code {
+.post-content :not(pre) code {
     background: rgba(#000, 0.5);
     padding: 0.25rem 0.5rem;
 }

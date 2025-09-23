@@ -18,7 +18,7 @@ gulp.task("css", function () {
         .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
         .pipe(postcss([autoprefixer()]));
 
-    var cssStream = gulp.src(["./assets/css/bootstrap.min.css", "./assets/css/katex.min.css", "./assets/css/prism-macchiato.css"], { allowEmpty: true }).pipe(concat("css-files.css"));
+    var cssStream = gulp.src(["./assets/css/bootstrap.min.css", "./assets/css/katex.min.css", "./assets/css/prism-gruvbox-dark.css"], { allowEmpty: true }).pipe(concat("css-files.css"));
 
     return merge(cssStream, sassStream)
         .pipe(concat("app.css"))
