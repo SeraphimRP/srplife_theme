@@ -27,7 +27,7 @@
 .header-anchor {
     opacity: 0;
     margin-right: 10px;
-    margin-left: -10px;
+    margin-left: -15px;
     margin-top: 2px;
     /* Pull it out to the left */
     color: var(--cde-text-muted);

@@ -26,7 +26,7 @@
     </div>    
         
         <div class="cde-window-content">
-            <header class="post-header">
+            <header class="post-header h-entry">
                 {{#if feature_image}}
                 <figure class="post-image">
                     <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
@@ -36,12 +36,12 @@
                 <div class="post-header-content">
                     <h1 class="post-title">{{title}}</h1>
                     <section class="post-meta">
-                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="D MMMMM YYYY"}}</time> in {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="D MMMMM YYYY"}}</time> in {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}} ({{reading_time minute="1 minute read" minutes="% minute read"}})
                     </section>
                 </div>
             </header>
 
-            <section class="gh-content">
+            <section class="gh-content e-content">
                 {{content}}
             </section>
 
