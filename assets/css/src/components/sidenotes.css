@@ -44,10 +44,8 @@
 }
 
 /* Hide/Show Logic */
-.gh-content.hide-endnotes .footnotes {
-    display: none;
-}
-
+.gh-content.hide-endnotes .footnotes,
+.gh-content.hide-endnotes .footnotes-sep,
 .gh-content.hide-sidenotes .notes-wrapper {
     display: none;
 }

@@ -13,12 +13,17 @@
 </head>
 <body class="{{body_class}}">
     <div class="cde-system-bar">
-        {{#if @member}}
+        <div class="system-bar-nav">
+            {{navigation}}
+        </div>
+        <div class="system-bar-auth">
+            {{#if @member}}
             <a href="#/portal/account" class="cde-system-bar-btn">Account</a>
         {{else}}
             <a href="#/portal/signin" class="cde-system-bar-btn">Sign In</a>
             <a href="#/portal/signup" class="cde-system-bar-btn">Subscribe (free!)</a>
         {{/if}}
+        </div>
     </div>
 
     <div class="viewport">
