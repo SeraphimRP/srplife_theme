@@ -1,0 +1,21 @@
+:root {
+    --cde-bg: #AEB2C3;
+    /* The main grey-blue */
+    --cde-title-active: #A64872;
+    /* The Pink/Purple */
+    --cde-title-text: #FFFFFF;
+
+    --cde-text: #000000;
+    --cde-text-muted: #444444;
+
+    --cde-white: #FFFFFF;
+    --cde-light: #D6D8E0;
+    /* Highlight for bevels */
+    --cde-dark: #646875;
+    /* Shadow for bevels */
+    --cde-darker: #404040;
+    /* Deep shadow */
+
+    --font-sans: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    --font-serif: fixed;
+}

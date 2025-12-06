@@ -1,0 +1,57 @@
+/* Profile Window */
+.profile-photo {
+    width: 100%;
+    height: auto;
+    /* Inset Bevel */
+    border: 2px solid var(--cde-dark);
+    border-bottom-color: var(--cde-white);
+    border-right-color: var(--cde-white);
+    margin-bottom: 15px;
+    background-color: #ddd;
+    display: block;
+}
+
+.profile-name {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-bio {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.nav,
+.profile-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li,
+.profile-links li {
+    margin-top: 8px;
+}
+
+.nav a,
+.profile-links a {
+    /* Button-like links for navigation */
+    display: block;
+    padding: 6px 10px;
+    background-color: var(--cde-bg);
+    color: var(--cde-text);
+    text-decoration: none;
+    font-weight: normal;
+    border-top: 1px solid var(--cde-white);
+    border-left: 1px solid var(--cde-white);
+    border-right: 1px solid var(--cde-dark);
+    border-bottom: 1px solid var(--cde-dark);
+}
+
+.nav a:active,
+.nav a:hover,
+.profile-links a:active,
+.profile-links a:hover {
+    background-color: #c0c4d0;
+}

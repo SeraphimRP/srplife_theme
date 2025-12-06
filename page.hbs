@@ -1,27 +1,46 @@
 {{!< default}}
 
-{{#post}}
-<div class="site-content-wrap">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="post-wrap">
-                    <article class="post-single {{post_class}}">
-                        {{#match @page.show_title_and_feature_image}}
-                        <div class="post-header d-flex {{#if feature_image}}has-image"
-                            style="background-image: url({{feature_image}});{{/if}}">
-                            <div class="header-content-wrap text-center">
-                                <h1 class="post-title text-center">{{title}}</h1>
-                            </div>
-                        </div>
-                        {{/match}}
-                        <div class="post-content">
-                            {{content}}
-                        </div>
-                    </article>
-                </div>
-            </div>
+<div class="container">
+    {{#post}}
+    <article class="cde-window">
+        <div class="cde-resize-handle cde-resize-handle-tl"></div>
+        <div class="cde-resize-handle cde-resize-handle-tr"></div>
+        <div class="cde-resize-handle cde-resize-handle-bl"></div>
+        <div class="cde-resize-handle cde-resize-handle-br"></div>
+
+        <!-- Bezels -->
+        <div class="cde-bezel cde-bezel-top"></div>
+        <div class="cde-bezel cde-bezel-bottom"></div>
+        <div class="cde-bezel cde-bezel-left"></div>
+        <div class="cde-bezel cde-bezel-right"></div>
+        <div class="cde-title-bar">
+        <div class="cde-controls-left">
+            <div class="cde-btn cde-btn-menu"></div>
         </div>
-    </div>
+        <div class="cde-title-text">~/pages/{{slug}}</div>
+        <div class="cde-controls-right">
+            <div class="cde-btn cde-btn-minimize"></div>
+            <div class="cde-btn cde-btn-maximize"></div>
+            <a href="https://srp.life"><div class="cde-btn cde-btn-close"></div></a>
+        </div>
+    </div>    
+        <div class="cde-window-content">
+            {{#match @page.show_title_and_feature_image}}
+                <header class="post-header">
+                    <h1 class="post-title">{{title}}</h1>
+                    
+                    {{#if feature_image}}
+                    <figure class="post-image">
+                        <img src="{{img_url feature_image size="l"}}" alt="{{title}}" style="width: 100%; height: auto; border: 2px solid var(--cde-border-dark); border-bottom-color: var(--cde-border-light); border-right-color: var(--cde-border-light); margin: 20px 0;" />
+                    </figure>
+                    {{/if}}
+                </header>
+            {{/match}}
+
+            <section class="gh-content">
+                {{content}}
+            </section>
+        </div>
+    </article>
+    {{/post}}
 </div>
-{{/post}}

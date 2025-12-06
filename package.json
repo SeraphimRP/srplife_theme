@@ -2,109 +2,30 @@
     "name": "srplife",
     "description": "Theme for srp.life.",
     "demo": "http://srp.life",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "engines": {
-        "ghost": ">=5.0.0"
+        "ghost": ">=6.0.0"
     },
+    "scripts": {
+        "zip": "npm run build:css && rm -rf ./dist && mkdir -p ./dist && zip -r ./dist/srplife.zip . -x \"*.zip\"\"dist/*\" \"*.git*\" \"node_modules/*\" \"reference_material/*\" \"assets/css/src/*\" \"preview/*\"",
+        "build:css": "postcss assets/css/src/main.css -o assets/css/screen.css",
+        "dev:css": "postcss assets/css/src/main.css -o assets/css/screen.css --watch",
+        "preview": "npm run build:css && node test-theme.js"
+    },
+    "license": "MIT",
     "screenshots": {
         "desktop": "assets/screenshot-desktop.jpg",
         "mobile": "assets/screenshot-mobile.jpg"
     },
-    "author": {
-        "name": "Seraphim Pardee",
-        "email": "me@srp.life",
-        "url": "https://srp.life"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Personal Blogs",
-            "Magazine Layouts"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme",
-        "personal",
-        "minimal"
-    ],
-    "scripts": {
-        "dist": "gulp css && gulp concat-js && gulp build && gulp zip"
-    },
     "config": {
         "posts_per_page": 6,
-        "card_assets": {
-            "exclude": [
-                "bookmark",
-                "gallery"
-            ]
-        },
-        "custom": {
-            "logo_for_light_mode": {
-                "type": "image"
-            },
-            "default_theme_mode": {
-                "type": "select",
-                "options": [
-                    "dark",
-                    "light"
-                ],
-                "default": "dark"
-            },
-            "show_theme_mode_switcher_icon": {
-                "type": "boolean",
-                "default": true
-            },
-            "post_list_container_width": {
-                "type": "select",
-                "options": [
-                    "narrow",
-                    "full-width"
-                ],
-                "default": "narrow"
-            },
-            "copyright_text_override": {
-                "type": "text",
-                "default": ""
-            },
-            "show_home_hero_section": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "home_hero_title": {
-                "type": "text",
-                "default": "Hello,",
-                "group": "homepage"
-            },
-            "home_hero_description": {
-                "type": "text",
-                "default": "Welcome to my blog.",
-                "group": "homepage"
-            },
-            "show_home_hero_subscription_form": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "home_hero_head_shot_image": {
-                "type": "image",
-                "group": "homepage"
-            },
-            "show_share_buttons": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
-            "show_author_info_card": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            }
-        },
         "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
             "s": {
                 "width": 300
             },
@@ -117,27 +38,35 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "card_assets": {
+            "exclude": [
+                "callout"
+            ]
         }
     },
+    "author": {
+        "name": "Seraphim Pardee",
+        "email": "me@srp.life",
+        "url": "https://srp.life"
+    },
+    "gscan": "v6",
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "retro",
+        "cde",
+        "solaris"
+    ],
     "devDependencies": {
-        "autoprefixer": "^10.4.2",
-        "browser-sync": "^2.27.7",
-        "del": "^6.0.0",
-        "gulp": "^4.0.2",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-postcss": "^9.0.1",
-        "gulp-rename": "^2.0.0",
-        "gulp-sass": "^5.1.0",
-        "gulp-uglify": "^3.0.2",
-        "gulp-wait": "0.0.2",
-        "gulp-zip": "^5.1.0",
-        "merge2": "^1.4.1",
-        "postcss-css-variables": "^0.18.0",
-        "sass": "^1.49.7"
-    },
-    "dependencies": {
-        "postcss": "^8.4.6"
-    },
-    "packageManager": "npm@11.2.0+sha512.3dc9c50ba813a3d54393155a435fe66404b72685ab0e3008f9ae9ed8d81f6104860f07ed2656dd5748c1322d95f3140fa9b19c59a6bba7750fd12285f81866da"
+        "autoprefixer": "^10.4.22",
+        "cssnano": "^7.1.2",
+        "fs-extra": "^11.3.2",
+        "handlebars": "^4.7.8",
+        "postcss": "^8.5.6",
+        "postcss-cli": "^11.0.1",
+        "postcss-import": "^16.1.1",
+        "postcss-nested": "^7.0.2"
+    }
 }

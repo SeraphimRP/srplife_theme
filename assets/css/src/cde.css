@@ -1,0 +1,293 @@
+/* CDE Window Component */
+.cde-window {
+    background-color: var(--cde-bg);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* The Frame: Thick colored border - slightly thicker for authenticity */
+    border: 7px solid var(--cde-title-active);
+    padding: 0;
+}
+
+.cde-window::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Resize Handles - Adjusted Size and Clean L-Shapes */
+.cde-resize-handle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    z-index: 20;
+    pointer-events: none;
+    filter: drop-shadow(1px 2px 0 var(--cde-darker));
+}
+
+.cde-resize-handle::before,
+.cde-resize-handle::after {
+    content: "";
+    position: absolute;
+    background-color: var(--cde-title-active);
+}
+
+/* Top-Left Handle */
+.cde-resize-handle-tl {
+    top: -7px;
+    left: -7px;
+}
+
+.cde-resize-handle-tl::before {
+    width: 40px;
+    /* Extended to cover Menu button */
+    height: 6px;
+    top: 0;
+    left: 0;
+}
+
+.cde-resize-handle-tl::after {
+    width: 6px;
+    height: 40px;
+    top: 0;
+    left: 0;
+}
+
+/* Top-Right Handle */
+.cde-resize-handle-tr {
+    top: -7px;
+    right: -7px;
+}
+
+.cde-resize-handle-tr::before {
+    width: 40px;
+    /* Extended to cover Close button */
+    height: 6px;
+    top: 0;
+    right: 0;
+}
+
+.cde-resize-handle-tr::after {
+    width: 6px;
+    height: 40px;
+    top: 0;
+    right: 0;
+}
+
+/* Bottom-Left Handle */
+.cde-resize-handle-bl {
+    bottom: -7px;
+    left: -7px;
+}
+
+.cde-resize-handle-bl::before {
+    width: 28px;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+}
+
+.cde-resize-handle-bl::after {
+    width: 6px;
+    height: 28px;
+    bottom: 0;
+    left: 0;
+}
+
+/* Bottom-Right Handle */
+.cde-resize-handle-br {
+    bottom: -7px;
+    right: -7px;
+}
+
+.cde-resize-handle-br::before {
+    width: 28px;
+    height: 6px;
+    bottom: 0;
+    right: 0;
+}
+
+.cde-resize-handle-br::after {
+    width: 6px;
+    height: 28px;
+    bottom: 0;
+    right: 0;
+}
+
+/* Bezels connecting the handles */
+.cde-bezel {
+    position: absolute;
+    background-color: var(--cde-title-active);
+    z-index: 25;
+    /* Increased to be above handles/border if needed, or at least visible */
+    pointer-events: none;
+    filter: drop-shadow(1px 2px 0 var(--cde-darker));
+}
+
+.cde-bezel-top {
+    top: -7px;
+    left: 33px;
+    /* Adjusted for 40px handle (40 - 7) */
+    right: 33px;
+    /* Adjusted for 40px handle */
+    height: 6px;
+    border-left: 1px solid var(--cde-darker);
+    border-right: 1px solid var(--cde-darker);
+}
+
+.cde-bezel-bottom {
+    bottom: -7px;
+    left: 21px;
+    right: 21px;
+    height: 6px;
+    border-left: 1px solid var(--cde-darker);
+    border-right: 1px solid var(--cde-darker);
+}
+
+.cde-bezel-left {
+    left: -7px;
+    top: 21px;
+    bottom: 21px;
+    width: 6px;
+    border-top: 1px solid var(--cde-darker);
+    border-bottom: 1px solid var(--cde-darker);
+}
+
+.cde-bezel-right {
+    right: -7px;
+    top: 21px;
+    bottom: 21px;
+    width: 6px;
+    border-top: 1px solid var(--cde-darker);
+    border-bottom: 1px solid var(--cde-darker);
+}
+
+/* Title Bar & Buttons */
+.cde-title-bar {
+    background-color: var(--cde-title-active);
+    color: var(--cde-white);
+    padding: 4px 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    min-height: 30px;
+}
+
+.cde-title-text {
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    font-family: var(--font-serif);
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 0 var(--cde-dark);
+}
+
+.cde-controls-left,
+.cde-controls-right {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Base Button Style */
+.cde-btn {
+    width: 20px;
+    height: 20px;
+    background-color: var(--cde-bg);
+    border: 1px solid transparent;
+    box-shadow: inset 1px 1px 0 var(--cde-white), inset -1px -1px 0 var(--cde-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.cde-btn:active {
+    box-shadow: inset 1px 1px 0 var(--cde-dark), inset -1px -1px 0 var(--cde-white);
+    background-color: #a0a0a0;
+}
+
+/* Authentic Button Icons */
+
+/* Menu (Left) - Small box/dot */
+.cde-btn-menu {
+    /* Separator to the right */
+    margin-right: 4px;
+    border-right: 1px solid var(--cde-dark);
+    box-shadow: inset 1px 1px 0 var(--cde-white), inset -1px -1px 0 var(--cde-dark), 1px 0 0 var(--cde-white);
+}
+
+.cde-btn-menu::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--cde-dark);
+    box-shadow: 1px 1px 0 var(--cde-white);
+}
+
+/* Minimize (Right 1) - Small dot */
+.cde-btn-minimize::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: var(--cde-dark);
+    box-shadow: 1px 1px 0 var(--cde-white);
+}
+
+/* Maximize (Right 2) - Large box */
+.cde-btn-maximize::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--cde-dark);
+    border-top-color: var(--cde-dark);
+    border-left-color: var(--cde-dark);
+    border-right-color: var(--cde-white);
+    border-bottom-color: var(--cde-white);
+    background: transparent;
+}
+
+/* Close (Right 3) - X shape */
+.cde-btn-close {
+    /* Separator to the left */
+    margin-left: 4px;
+    border-left: 1px solid var(--cde-white);
+    box-shadow: inset 1px 1px 0 var(--cde-white), inset -1px -1px 0 var(--cde-dark), -1px 0 0 var(--cde-dark);
+}
+
+.cde-btn-close::before,
+.cde-btn-close::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: var(--cde-dark);
+    transform: rotate(45deg);
+}
+
+.cde-btn-close::after {
+    transform: rotate(-45deg);
+}
+
+.cde-window-content {
+    padding: 20px;
+    background-color: var(--cde-bg);
+    flex-grow: 1;
+    /* Inner Bevel for content area */
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+}

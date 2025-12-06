@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" data-layout="{{@custom.post_list_container_width}}" data-theme="{{@custom.default_theme_mode}}">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}" />
+    
+    {{!-- Prism.js for Syntax Highlighting (Solarized Light Theme) --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" integrity="sha512-cj8kqqOW38yKW2v8xXqX38lC9tX3X8tC+8wX3g+vK8tq9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-		<title>{{meta_title}}</title>
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div class="cde-system-bar">
+        {{#if @member}}
+            <a href="#/portal/account" class="cde-system-bar-btn">Account</a>
+        {{else}}
+            <a href="#/portal/signin" class="cde-system-bar-btn">Sign In</a>
+            <a href="#/portal/signup" class="cde-system-bar-btn">Subscribe (free!)</a>
+        {{/if}}
+    </div>
 
-		<!--<link type="text/css" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-			rel="stylesheet">-->
+    <div class="viewport">
+        {{{body}}}
 
-		<link rel="preconnect" href="https://fonts.bunny.net">
-		<link href="https://fonts.bunny.net/css?family=source-serif-4:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <footer>
+            <p>&copy; {{@site.year}} <a href="https://srp.life">{{@site.title}}</a> - Published with <a href="https://ghost.org">Ghost</a>
+            <br>
+            <br>
+            <a href="https://github.com/SeraphimRP/srplife_theme">Theme</a> inspired by <a href="https://www.opencode.net/phob1an/commonality">Commonality Sol</a>.
+            </p>
+        </footer>
+    </div>
 
-		<style id="app-css">
-            {{> styles/app-css}}
-        </style>
+    {{!-- Prism.js Core --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+pLIqGYx6x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{!-- Prism.js Autoloader (optional, for many languages) --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-V14cM4Gv2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-		<script data-cfasync="false">
-			if(typeof(Storage) !== 'undefined') {
-                if (localStorage.getItem('selected-theme') == 'light') {
-					document.documentElement.setAttribute('data-theme', 'light');
-                }
-				else if (localStorage.getItem('selected-theme') == 'dark') {
-					document.documentElement.setAttribute('data-theme', 'dark');
-				}
-            }
-		</script>
-
-		<script src="{{asset "js/app.min.js"}}"></script>
-
-		{{ghost_head}}
-	</head>
-	<body class="{{body_class}}">
-		{{> header}}
-
-		<main class="main-content-area">
-			{{{body}}}
-		</main>
-
-		{{> footer}}
-		{{> search-popup}}
-
-		<script>
-			var nextPage = '{{pagination.next}}';
-			var totalPages = '{{pagination.pages}}';
-			if(typeof(Storage) !== 'undefined') {
-                if (localStorage.getItem('selected-theme') == 'light' || document.documentElement.getAttribute('data-theme') == 'light') {
-					document.getElementById('switch_theme').checked = true;
-                }
-            }
-        </script>
-
-		{{{block "scripts"}}}
-		<script src="{{asset "js/sidenotes.js"}}"></script>
-		<script defer src="{{asset "js/vendor/katex.min.js"}}"></script>
-		<script defer src="{{asset "js/vendor/katex-auto-render.min.js"}}" onload="renderMathInElement(document.body);"></script>
-		{{ghost_foot}}
-	</body>
+    {{!-- Sidenotes Script --}}
+    <script src="{{asset "js/sidenotes.js"}}"></script>
+    <script src="{{asset "js/post-utils.js"}}"></script>
+    {{ghost_foot}}
+</body>
 </html>

@@ -1,0 +1,22 @@
+/*
+  Solaris CDE "Commonality Sol" Inspired Theme
+  Refined Design based on User Reference:
+  - Background: SVG Pattern / #AEB2C3
+  - Active Window Title: #A64872 (Fuchsia Flock - Pink/Purple from image)
+  - Window Border: #A64872 (Matching titlebar)
+  - Text: Black
+  - Widgets: 3D Bevels
+*/
+
+@import "settings.css";
+@import "base.css";
+@import "layout.css";
+@import "cde.css";
+
+@import "components/profile.css";
+@import "components/posts.css";
+@import "components/content.css";
+@import "components/forms.css";
+@import "components/ghost.css";
+@import "components/sidenotes.css";
+@import "components/system-bar.css";

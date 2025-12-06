@@ -1,64 +1,57 @@
 {{!< default}}
 
-{{#post}}
-<div class="site-content-wrap">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="post-wrap">
-                    <article class="post-single {{post_class}} h-entry">
-                        <div class="post-header d-flex {{#if feature_image}}has-image"
-                            style="background-image: url({{feature_image}});{{/if}}">
-                            <div class="header-content-wrap">
-                                <a style="display: none;" class="u-url" href="{{url}}"></a>
-                                {{#primary_tag}}
-                                <div class="primary-tag text-center"><a href="{{url}}">{{name}}</a></div>
-                                {{/primary_tag}}
-                                <h1 class="post-title text-center p-name">{{title}}</h1>
-                                <span class="post-subtitle text-center">{{excerpt}}</span>
-                                <div class="post-meta mx-auto d-flex justify-content-between">
-                                    <div class="reading-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</div>
-                                    <time class="date dt-published" datetime="{{date format=" YYYY-MM-DD hh:mm:ss"}}">{{date format="DD MMMM YYYY"}}</time>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-content e-content">
-                            {{#if access}}
-                            {{content}}
-                            {{else}}
-                            {{{html}}}
-                            <div class="no-access-message">
-                                {{t "You don't have access to this post on"}} <strong>{{@site.title}}</strong> {{t
-                                "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access."}}
-                            </div>
-                            <div class="post-upgrade-cta-box text-center">
-                                {{#if @member}}
-                                <h2 class=" cta-title">{{t "This post is for paying subscribers only"}}</h2>
-                                {{else}}
-                                <h2 class=" cta-title">{{t "This post is for subscribers only"}}</h2>
-                                {{/if}}
-                                <a class="btn btn-secondary btn-cta" href="{{@site.url}}/#/portal/signup">{{t "Subscribe now"}}</a>
-                                <p class="sign-in-cta"><small>{{t "Already have an account?"}} <a href="{{@site.url}}/#/portal/signin">{{t "Sign in"}}</a></small></p>
-                            </div>
-                            {{/if}}
-                        </div>
-                        <div class="post-footer">
-                            {{#if tags}}
-                            <div class="tags"><span class="prefix">{{t "Published in:"}}</span><span class="p-category">{{tags separator=""}}</span></div>
-                            {{/if}}
-                            {{#if @custom.show_author_info_card}}
-                            {{> about-author}}
-                            {{/if}}
-                            {{#if @custom.show_share_buttons}}
-                            {{> share}}
-                            {{/if}}
-                            {{comments title="Comments" count=false mode="auto" saturation=80}}
-                        </div>
-                    </article>
-                </div>
-            </div>
+<div class="container">
+    {{#post}}
+    <article class="cde-window">
+        <div class="cde-resize-handle cde-resize-handle-tl"></div>
+        <div class="cde-resize-handle cde-resize-handle-tr"></div>
+        <div class="cde-resize-handle cde-resize-handle-bl"></div>
+        <div class="cde-resize-handle cde-resize-handle-br"></div>
+
+        <!-- Bezels -->
+        <div class="cde-bezel cde-bezel-top"></div>
+        <div class="cde-bezel cde-bezel-bottom"></div>
+        <div class="cde-bezel cde-bezel-left"></div>
+        <div class="cde-bezel cde-bezel-right"></div>
+        <div class="cde-title-bar">
+        <div class="cde-controls-left">
+            <div class="cde-btn cde-btn-menu"></div>
         </div>
-    </div>
+        <div class="cde-title-text">~/posts/{{slug}}</div>
+        <div class="cde-controls-right">
+            <div class="cde-btn cde-btn-minimize"></div>
+            <div class="cde-btn cde-btn-maximize"></div>
+            <a href="https://srp.life"><div class="cde-btn cde-btn-close"></div></a>
+        </div>
+    </div>    
+        
+        <div class="cde-window-content">
+            <header class="post-header">
+                {{#if feature_image}}
+                <figure class="post-image">
+                    <img src="{{img_url feature_image size="l"}}" alt="{{title}}" />
+                </figure>
+                {{/if}}
+
+                <div class="post-header-content">
+                    <h1 class="post-title">{{title}}</h1>
+                    <section class="post-meta">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="D MMMMM YYYY"}}</time> in {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}
+                    </section>
+                </div>
+            </header>
+
+            <section class="gh-content">
+                {{content}}
+            </section>
+
+            {{#if comments}}
+                <section class="comments-section">
+                    <h3>Comments</h3>
+                    {{comments}}
+                </section>
+            {{/if}}
+        </div>
+    </article>
+    {{/post}}
 </div>
-<!-- {{> prev-next}} - until i can figure out how to make this ignore Daily Orthodox posts -->
-{{/post}}

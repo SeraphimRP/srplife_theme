@@ -1,0 +1,33 @@
+/* Form Elements (Inputs, Buttons) - Theming */
+input[type="text"],
+input[type="email"],
+textarea {
+    background-color: #fff;
+    border: 2px solid var(--cde-dark);
+    border-bottom-color: var(--cde-white);
+    border-right-color: var(--cde-white);
+    padding: 8px;
+    font-family: var(--font-serif);
+}
+
+button,
+.button,
+.gh-btn {
+    background-color: var(--cde-bg);
+    color: var(--cde-text);
+    border-top: 2px solid var(--cde-white);
+    border-left: 2px solid var(--cde-white);
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-weight: bold;
+}
+
+button:active {
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+}

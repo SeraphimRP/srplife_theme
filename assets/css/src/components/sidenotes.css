@@ -1,0 +1,64 @@
+/* Sidenotes */
+.notes-wrapper {
+    position: relative;
+    height: 0;
+    width: 100%;
+    /* Ensure it spans the full width so we can position relative to the right edge */
+    display: none;
+    /* Hidden by default (mobile) */
+    pointer-events: none;
+    /* Let clicks pass through the empty wrapper */
+}
+
+.note {
+    position: absolute;
+    left: 100%;
+    /* Start at the right edge of the content */
+    margin-left: 40px;
+    /* Add some spacing from the content */
+    width: 240px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    background-color: var(--cde-bg);
+    border: 2px solid var(--cde-dark);
+    border-bottom-color: var(--cde-white);
+    border-right-color: var(--cde-white);
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: all 0.2s ease;
+    pointer-events: auto;
+    /* Re-enable clicks on the note itself */
+}
+
+.note-identifier {
+    font-weight: bold;
+    color: var(--cde-title-active);
+    margin-bottom: 5px;
+}
+
+.active-sidenote {
+    border-color: var(--cde-title-active);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* Hide/Show Logic */
+.gh-content.hide-endnotes .footnotes {
+    display: none;
+}
+
+.gh-content.hide-sidenotes .notes-wrapper {
+    display: none;
+}
+
+/* Large Screen Adjustments */
+@media (min-width: 65rem) {
+    .notes-wrapper {
+        display: block;
+    }
+
+    /* Ensure sidenotes don't get clipped if they go outside the window container */
+    /* The .cde-window-content has overflow: visible by default, which is good. */
+    /* But .container has max-width. */
+}

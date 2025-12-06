@@ -1,0 +1,86 @@
+/* Post Content */
+.gh-content {
+    line-height: 1.6;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+}
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3 {
+    font-family: var(--font-serif);
+    margin-top: 1.5em;
+    color: var(--cde-title-active);
+    border-bottom: 1px solid var(--cde-dark);
+    position: relative;
+}
+
+.gh-content h1:hover .header-anchor,
+.gh-content h2:hover .header-anchor,
+.gh-content h3:hover .header-anchor,
+.gh-content h4:hover .header-anchor,
+.gh-content h5:hover .header-anchor,
+.gh-content h6:hover .header-anchor {
+    opacity: 1;
+}
+
+.header-anchor {
+    opacity: 0;
+    margin-right: 10px;
+    margin-left: -10px;
+    margin-top: 2px;
+    /* Pull it out to the left */
+    color: var(--cde-text-muted);
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 0.8em;
+    position: absolute;
+    /* Take it out of flow to avoid shifting text */
+    left: 0;
+    /* Fallback */
+}
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4,
+.gh-content h5,
+.gh-content h6 {
+    position: relative;
+    /* Ensure anchor is positioned relative to header */
+}
+
+.header-anchor:hover {
+    text-decoration: none;
+    color: var(--cde-title-active);
+}
+
+.gh-content p {
+    margin-bottom: 1.5em;
+}
+
+.gh-content pre {
+    background: #fdf6e3;
+    padding: 1em;
+    /* Inset Bevel */
+    border: 2px solid var(--cde-dark);
+    border-bottom-color: var(--cde-white);
+    border-right-color: var(--cde-white);
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+.gh-content blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    border-left: 4px solid var(--cde-title-active);
+    background-color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+}
+
+/* Comments */
+.comments-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px groove var(--cde-white);
+}

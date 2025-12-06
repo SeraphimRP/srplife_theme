@@ -1,0 +1,297 @@
+/* Generic Card Spacing */
+.kg-card {
+    margin-bottom: 1.5em;
+}
+
+/* Ghost Bookmark Card */
+.kg-bookmark-card {
+    width: 100%;
+    background: var(--cde-white);
+    border: 2px solid var(--cde-dark);
+    border-bottom-color: var(--cde-white);
+    border-right-color: var(--cde-white);
+    margin-bottom: 1.5em;
+}
+
+.kg-bookmark-container {
+    display: flex;
+    text-decoration: none;
+    color: var(--cde-text);
+    min-height: 148px;
+}
+
+.kg-bookmark-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: start;
+    align-items: start;
+    padding: 20px;
+}
+
+.kg-bookmark-title {
+    font-size: 1.1rem;
+    line-height: 1.3em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.kg-bookmark-description {
+    font-size: 0.9rem;
+    line-height: 1.4em;
+    margin-bottom: 5px;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: auto;
+}
+
+.kg-bookmark-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
+
+.kg-bookmark-author {
+    margin-right: 8px;
+}
+
+.kg-bookmark-publisher {
+    font-weight: 600;
+}
+
+.kg-bookmark-thumbnail {
+    position: relative;
+    min-width: 33%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Ghost Gallery */
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ghost Widths */
+/* Ghost Widths - Constrained to CDE Window */
+.kg-width-wide {
+    width: 100%;
+}
+
+.kg-width-full {
+    width: 100%;
+}
+
+/* Ghost Callout Card */
+.kg-callout-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    margin-bottom: 1.5em;
+    border-radius: 0;
+    /* No rounded corners in CDE */
+
+    /* Default CDE Look: Raised Panel */
+    background-color: var(--cde-bg);
+    color: var(--cde-text);
+    border-top: 2px solid var(--cde-white);
+    border-left: 2px solid var(--cde-white);
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+}
+
+.kg-callout-card-grey {
+    /* Dark "Terminal" or "Inset" look based on user reference */
+    background-color: var(--cde-darker);
+    /* #404040 */
+    color: var(--cde-white);
+
+    /* Inset Bevel */
+    border-top: 2px solid #222;
+    border-left: 2px solid #222;
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+}
+
+.kg-callout-card-grey a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.kg-callout-emoji {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.kg-callout-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Ghost Toggle Card */
+.kg-toggle-card {
+    background-color: var(--cde-bg);
+    margin-bottom: 1.5em;
+    /* Raised Panel */
+    border-top: 2px solid var(--cde-white);
+    border-left: 2px solid var(--cde-white);
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+    padding: 16px;
+}
+
+.kg-toggle-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kg-toggle-card-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.kg-toggle-content {
+    margin-top: 16px;
+    /* Inset Panel for content */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+    padding: 16px;
+}
+
+/* Ghost File Card */
+.kg-file-card {
+    margin-bottom: 1.5em;
+}
+
+.kg-file-card-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--cde-bg);
+    color: var(--cde-text);
+    /* Raised Button Look */
+    border-top: 2px solid var(--cde-white);
+    border-left: 2px solid var(--cde-white);
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+    padding: 16px;
+    transition: all 0.1s;
+}
+
+.kg-file-card-container:active {
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+    background-color: #a0a0a0;
+}
+
+.kg-file-card-contents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.kg-file-card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.kg-file-card-caption {
+    font-size: 0.9rem;
+    color: var(--cde-text-muted);
+}
+
+.kg-file-card-metadata {
+    font-size: 0.8rem;
+    color: var(--cde-text-muted);
+}
+
+.kg-file-card-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+}
+
+/* Ghost Embed Card */
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5em;
+    /* Raised Panel for the container */
+    background-color: var(--cde-bg);
+    border-top: 2px solid var(--cde-white);
+    border-left: 2px solid var(--cde-white);
+    border-right: 2px solid var(--cde-dark);
+    border-bottom: 2px solid var(--cde-dark);
+    padding: 10px;
+}
+
+.kg-embed-card iframe {
+    /* Inset Bevel for the content */
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+    width: 100%;
+}
+
+.kg-embed-card iframe[src*="youtube"],
+.kg-embed-card iframe[src*="vimeo"] {
+    aspect-ratio: 4 / 3;
+    height: auto;
+}
+
+/* Captions */
+figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--cde-text-muted);
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+}
+
+.kg-card-hascaption img {
+    /* Ensure images in captioned cards also get the inset look if they don't have it */
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+}

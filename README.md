@@ -2,12 +2,24 @@
 
 Theme for my Ghost blog at [srp.life](https://srp.life).
 
-## What is it?
-
-Well, funny story. It all starts with an open-source Ghost theme called [Prometheus](https://github.com/halfrost/Prometheus). Turns out, Envato has a lot of grifters, and I purchased a very minimally modified version of this theme without any adherence to halfrost's MIT license. Sure, could they repackage it and sell it? Absolutely. Yet, they couldn't even do the bare minimum of attributing halfrost for their work.
-
-So, in a similar spirit, I've made ample modifications to the theme to support my needs and purge out excess. As a result, I'm open-sourcing my theme, recognizing the effort of halfrost and aligning it back to its open source intentions.
+The old theme can be found in the prometheus branch.
 
 ## Usage
 
-Clone the repo, `npm install`, then `npm run dist`. Upload `dist/srplife.zip` to Ghost. ???. Profit.
+Clone the repo, `npm install`, then `npm run zip`. Upload `dist/srplife.zip` to Ghost. ???. Profit.
+
+## Development
+
+There's a handful of options to help with development.
+
+### Preview
+
+`npm run preview` will build the theme with the contents of a Ghost export file, generating a preview of the theme in the `preview` directory. You can open `preview/index.html` in your browser to see the theme in action, albeit with some broken images, links, and some Ghost-specific markup that doesn't render.
+
+It's enough to avoid running a local Ghost instance just for the sake of testing.
+
+### CSS
+
+`npm run build:css` will build the CSS from the SCSS files in `assets/css/src` and output it to `assets/css/screen.css`. `npm run dev:css` will do the same, but watch for changes and rebuild on the fly.
+
+
