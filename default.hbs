@@ -16,6 +16,9 @@
         <div class="system-bar-nav">
             {{navigation}}
         </div>
+        {{!-- <div class="system-bar-title">
+            <img src="{{asset "images/logo3.png"}}" alt="{{@site.title}}" />
+        </div> --}}
         <div class="system-bar-auth">
             {{#if @member}}
             <a href="#/portal/account" class="cde-system-bar-btn">Account</a>
@@ -30,7 +33,7 @@
         {{{body}}}
 
         <footer>
-            <p>&copy; {{@site.year}} <a href="https://srp.life">{{@site.title}}</a> - Published with <a href="https://ghost.org">Ghost</a>
+            <p>&copy; {{date format="YYYY"}} <a href="https://srp.life">{{@site.title}}</a> - Published with <a href="https://ghost.org">Ghost</a>
             <br>
             <br>
             <a href="https://github.com/SeraphimRP/srplife_theme">Theme</a> inspired by <a href="https://www.opencode.net/phob1an/commonality">Commonality Sol</a>.
