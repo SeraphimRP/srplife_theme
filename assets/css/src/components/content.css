@@ -37,7 +37,7 @@
     position: absolute;
     /* Take it out of flow to avoid shifting text */
     left: 0;
-    /* Fallback */
+
 }
 
 .gh-content h1,

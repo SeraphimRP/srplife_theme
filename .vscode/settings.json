@@ -4,7 +4,7 @@
         "editor.wordWrapColumn": 200,
         "editor.defaultFormatter": "mohd-akram.vscode-html-format"
     },
-    "[scss]": {
+    "[css]": {
         "editor.suggest.insertMode": "replace"
     }
 }

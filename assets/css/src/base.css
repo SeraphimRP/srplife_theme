@@ -2,7 +2,7 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
-    /* background-color: var(--cde-bg); */
+
     color: var(--cde-text);
     font-family: var(--font-serif);
     /* Simple SVG Pattern Background */

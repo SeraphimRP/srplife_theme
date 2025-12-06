@@ -129,7 +129,7 @@
 .kg-callout-card-grey {
     /* Dark "Terminal" or "Inset" look based on user reference */
     background-color: var(--cde-darker);
-    /* #404040 */
+
     color: var(--cde-white);
 
     /* Inset Bevel */
