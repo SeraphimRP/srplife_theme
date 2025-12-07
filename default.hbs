@@ -13,19 +13,21 @@
 </head>
 <body class="{{body_class}}">
     <div class="cde-system-bar">
-        <div class="system-bar-nav">
-            {{navigation}}
-        </div>
-        {{!-- <div class="system-bar-title">
-            <img src="{{asset "images/logo3.png"}}" alt="{{@site.title}}" />
-        </div> --}}
-        <div class="system-bar-auth">
-            {{#if @member}}
-            <a href="#/portal/account" class="cde-system-bar-btn">Account</a>
-        {{else}}
-            <a href="#/portal/signin" class="cde-system-bar-btn">Sign In</a>
-            <a href="#/portal/signup" class="cde-system-bar-btn">Subscribe (free!)</a>
-        {{/if}}
+        <button id="system-bar-menu-toggle" class="cde-system-bar-btn mobile-only" aria-label="Menu">
+            Menu <span class="cde-menu-icon">▼</span>
+        </button>
+        <div class="system-bar-content">
+            <div class="system-bar-nav">
+                {{navigation}}
+            </div>
+            <div class="system-bar-auth">
+                {{#if @member}}
+                <a href="#/portal/account" class="cde-system-bar-btn">Account</a>
+            {{else}}
+                <a href="#/portal/signin" class="cde-system-bar-btn">Sign In</a>
+                <a href="#/portal/signup" class="cde-system-bar-btn">Subscribe (free!)</a>
+            {{/if}}
+            </div>
         </div>
     </div>
 
@@ -36,7 +38,7 @@
             <p>&copy; {{date format="YYYY"}} <a href="https://srp.life">{{@site.title}}</a> - Published with <a href="https://ghost.org">Ghost</a>
             <br>
             <br>
-            <a href="https://github.com/SeraphimRP/srplife_theme">Theme</a> inspired by <a href="https://www.opencode.net/phob1an/commonality">Commonality Sol</a>.
+            <a href="https://github.com/SeraphimRP/srplife_theme">Theme</a> inspired by <a href="https://www.opencode.net/phob1an/commonality">Commonality Sol</a>
             </p>
         </footer>
     </div>
@@ -49,6 +51,7 @@
     {{!-- Sidenotes Script --}}
     <script src="{{asset "js/sidenotes.js"}}"></script>
     <script src="{{asset "js/post-utils.js"}}"></script>
+    <script src="{{asset "js/system-bar.js"}}"></script>
     {{ghost_foot}}
 </body>
 </html>

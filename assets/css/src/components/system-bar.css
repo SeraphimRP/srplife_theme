@@ -87,5 +87,83 @@
 .cde-system-bar-btn:hover {
     text-decoration: none;
     background-color: #c0c4d6;
+}
 
+/* Mobile Menu Styles */
+.mobile-only {
+    display: none;
+}
+
+/* Pressed state for the toggle button */
+.cde-system-bar-btn.active {
+    border-top: 2px solid var(--cde-dark);
+    border-left: 2px solid var(--cde-dark);
+    border-right: 2px solid var(--cde-white);
+    border-bottom: 2px solid var(--cde-white);
+    background-color: #c0c4d6;
+}
+
+.cde-menu-icon {
+    display: inline-block;
+}
+
+/* Rotate icon when active */
+.cde-system-bar-btn.active .cde-menu-icon {
+    transform: rotate(180deg);
+}
+
+.system-bar-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: inline-block;
+    }
+
+    .system-bar-content {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background-color: var(--cde-bg);
+        border: 2px solid var(--cde-white);
+        border-right: 2px solid var(--cde-dark);
+        border-bottom: 2px solid var(--cde-dark);
+        width: 200px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        padding: 5px;
+    }
+
+    .system-bar-content.active {
+        display: flex;
+        width: 100%;
+    }
+
+    .system-bar-nav,
+    .system-bar-auth {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .system-bar-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .system-bar-nav a,
+    .cde-system-bar-btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 2px 0;
+        text-align: center;
+    }
+
+    /* Hide the subscribe button in mobile menu if it's too cluttered or keep it */
 }
