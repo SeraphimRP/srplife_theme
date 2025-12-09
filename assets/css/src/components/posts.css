@@ -115,3 +115,7 @@
         max-height: 300px;
     }
 }
+
+.pagination .older-posts {
+    float: right;
+}
