@@ -2,7 +2,7 @@
 .gh-content {
     line-height: 1.6;
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .gh-content h1,
@@ -83,4 +83,8 @@
     margin-top: 40px;
     padding-top: 20px;
     border-top: 2px groove var(--cde-white);
+}
+
+.gh-content li {
+    margin-bottom: 0.5rem;
 }

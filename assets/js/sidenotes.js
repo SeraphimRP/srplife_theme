@@ -154,7 +154,7 @@ function positionSidenotes() {
 }
 
 function insertAndPositionSidenotes({ showFootnotes }) {
-    const mediaQuery = window.matchMedia("(min-width: 65rem)");
+    const mediaQuery = window.matchMedia("(min-width: 102rem)");
 
     if (mediaQuery.matches) {
         insertSidenotes();
@@ -166,7 +166,7 @@ function insertAndPositionSidenotes({ showFootnotes }) {
 
 function onResize() {
     const sidenotesInDom = Boolean(document.querySelector(notesWrapperSelector));
-    const mediaQuery = window.matchMedia("(min-width: 65rem)");
+    const mediaQuery = window.matchMedia("(min-width: 102rem)");
 
     if (mediaQuery.matches) {
         if (!sidenotesInDom) {
@@ -185,7 +185,7 @@ function onResize() {
 }
 
 function onAnchorClick(evt) {
-    const mediaQuery = window.matchMedia("(min-width: 65rem)");
+    const mediaQuery = window.matchMedia("(min-width: 102rem)");
 
     dehilightNotes();
 

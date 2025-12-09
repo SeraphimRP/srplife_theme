@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "css/screen.css"}}" />
-    
-    {{!-- Prism.js for Syntax Highlighting (Solarized Light Theme) --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" integrity="sha512-cj8kqqOW38yKW2v8xXqX38lC9tX3X8tC+8wX3g+vK8tq9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9tX9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{asset "css/prism.css"}}" />
 
+    {{!-- Prism.js Core --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" integrity="sha512-HiD3V4nv8fcjtouznjT9TqDNDm1EXngV331YGbfVGeKUoH+OLkRTCMzA34ecjlgSQZpdHZupdSrqHY+Hz3l6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{!-- Prism.js Autoloader (optional, for many languages) --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     <script>
         window.addEventListener("load", (event) => {
@@ -57,11 +60,6 @@
             </p>
         </footer>
     </div>
-
-    {{!-- Prism.js Core --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+pLIqGYx6x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4x4==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{!-- Prism.js Autoloader (optional, for many languages) --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-V14cM4Gv2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy2Xy==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     {{!-- Sidenotes Script --}}
     <script src="{{asset "js/sidenotes.js"}}"></script>

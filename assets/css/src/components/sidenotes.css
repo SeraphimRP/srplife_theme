@@ -51,7 +51,7 @@
 }
 
 /* Large Screen Adjustments */
-@media (min-width: 65rem) {
+@media (min-width: 102rem) {
     .notes-wrapper {
         display: block;
     }
