@@ -59,18 +59,18 @@
             <div class="cde-bezel cde-bezel-left"></div>
             <div class="cde-bezel cde-bezel-right"></div>
             <div class="cde-title-bar">
-            <div class="cde-controls-left">
-                <div class="cde-btn cde-btn-menu"></div>
+                <div class="cde-controls-left">
+                    <div class="cde-btn cde-btn-menu"></div>
+                </div>
+                <div class="cde-title-text">~/posts</div>
+                <div class="cde-controls-right">
+                    <div class="cde-btn cde-btn-minimize"></div>
+                    <div class="cde-btn cde-btn-maximize"></div>
+                    <div class="cde-btn cde-btn-close"></div>
+                </div>
             </div>
-            <div class="cde-title-text">~/posts</div>
-            <div class="cde-controls-right">
-                <div class="cde-btn cde-btn-minimize"></div>
-                <div class="cde-btn cde-btn-maximize"></div>
-                <div class="cde-btn cde-btn-close"></div>
-            </div>
-        </div>
             <div class="cde-window-content">
-                {{#foreach posts }}
+                {{#foreach posts}}
                     <article class="post-list-item">
                         {{#if feature_image}}
                             <a href="{{url}}" class="post-card-image-link">
@@ -97,7 +97,6 @@
             </div>
         </div>
     </main>
-
 </div>
 
 <div style="display: none;" class="h-card vcard">
