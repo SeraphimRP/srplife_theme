@@ -118,6 +118,13 @@
     display: block;
 }
 
+/* wikiref.js adds this once it's measured that there's more room above the
+   trigger than below - flips the tooltip to open upward instead of down. */
+.wiki-ref-flip .wiki-ref-tooltip {
+    top: auto;
+    bottom: 100%;
+}
+
 .wiki-ref-summary {
     display: block;
     margin-bottom: 8px;
