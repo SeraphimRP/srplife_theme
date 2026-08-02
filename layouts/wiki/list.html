@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="container home-layout">
 
-	{{ partial "wiki-sidebar.html" (dict "GitInfo" .GitInfo "page" .) }}
+	{{ partial "wiki-sidebar.html" . }}
 
 	{{- /* Right Column: Wiki Entry List Window */ -}}
 	<main class="post-column h-feed">
