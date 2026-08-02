@@ -5,7 +5,7 @@
 
 	{{- /* Right Column: Wiki Entry Content Window */ -}}
 	<main class="post-column h-entry">
-		{{ partial "wm-window-top.html" (dict "title" (printf "~/wiki/%s" (.Title | urlize)) "style" "min-height: 80vh;") }}
+		{{ partial "wm-window-top.html" (dict "title" (printf "~/content/wiki/%s.md" (.Title | urlize)) "style" "min-height: 80vh;") }}
 
 		<article class="wiki-entry">
 			<header class="wiki-entry-header">
