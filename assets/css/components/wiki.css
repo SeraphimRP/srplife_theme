@@ -124,6 +124,11 @@
     font-size: 0.85rem;
     line-height: 1.4;
     color: var(--cm-subtext0);
+    white-space: pre-line;
+}
+
+.wiki-ref-summary:last-child {
+    margin-bottom: 0;
 }
 
 .wiki-ref-more {

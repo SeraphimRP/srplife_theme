@@ -21,13 +21,19 @@
 			href="{{ with $wikiRoot }}{{ .RelPermalink }}{{ else }}{{ "wiki/" | relURL }}{{ end }}">
 			All
 		</a>
+		{{ $hasCategories := false }}
 		{{ range site.Taxonomies.category }}
-			{{ $isActive := or (eq .Page.RelPermalink $currentPermalink) (in $entryCategoryLinks .Page.RelPermalink) }}
-			<a class="wm-btn wiki-category-link{{ if $isActive }} active{{ end }}" href="{{ .Page.RelPermalink }}">
-				{{ .Page.Title }}
-				<span class="wiki-category-count">{{ .Count }}</span>
-			</a>
-		{{ else }}
+			{{ $publishedCount := len (where .Pages "Draft" false) }}
+			{{ if gt $publishedCount 0 }}
+				{{ $hasCategories = true }}
+				{{ $isActive := or (eq .Page.RelPermalink $currentPermalink) (in $entryCategoryLinks .Page.RelPermalink) }}
+				<a class="wm-btn wiki-category-link{{ if $isActive }} active{{ end }}" href="{{ .Page.RelPermalink }}">
+					{{ .Page.Title }}
+					<span class="wiki-category-count">{{ $publishedCount }}</span>
+				</a>
+			{{ end }}
+		{{ end }}
+		{{ if not $hasCategories }}
 			<p class="wiki-category-empty">No categories yet.</p>
 		{{ end }}
 	</nav>

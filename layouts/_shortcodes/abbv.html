@@ -1,0 +1,20 @@
+{{- /*
+@param {string} [description] The description of the item.
+
+@returns {template.HTML}
+
+@example {{< abbv "Orthodox Church in America" >}}OCA{{< /abbv >}}
+*/}}
+
+{{- $description := or (.Get "description") (.Get 0) -}}
+{{- with $description -}}
+	{{- $text := $.Inner -}}
+	{{- if not $text -}}
+		{{- errorf "The %q shortcode requires inner content (the abbreviated text). See %s" $.Name $.Position -}}
+	{{- else -}}
+		{{- $summary := $description | plainify | strings.TrimSpace -}}
+		<span class="wiki-ref" tabindex="0">{{ $text }}<span class="wiki-ref-tooltip"><span class="wiki-ref-summary">{{ $summary }}</span></span></span>
+	{{- end -}}
+{{- else -}}
+	{{- errorf "The %q shortcode requires a description argument. See %s" .Name .Position -}}
+{{- end -}}
