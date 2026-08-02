@@ -22,14 +22,14 @@
         "solaris"
     ],
     "devDependencies": {
-        "autoprefixer": "^10.4.22",
-        "cssnano": "^7.1.2",
-        "lucide-static": "^1.24.0",
-        "postcss": "^8.5.6",
+        "autoprefixer": "^10.5.4",
+        "cssnano": "^7.1.9",
+        "lucide-static": "^1.28.0",
+        "postcss": "^8.5.25",
         "postcss-cli": "^11.0.1",
         "postcss-import": "^16.1.1",
         "postcss-nested": "^7.0.2",
-        "prettier": "^3.9.5",
+        "prettier": "^3.9.6",
         "prettier-plugin-toml": "^2.0.6",
         "simple-icons": "^12.4.0"
     }
