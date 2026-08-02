@@ -6,7 +6,7 @@
 	{{- $profileTitle := .Site.Title | default "" }}
 	{{- $profileBio := .Site.Params.bio | default "" }}
 	{{- $profileSocial := .Site.Params.social_links | default (slice) }}
-	{{ partial "profile.html" (dict "profilePicture" $profilePicture "profileTitle" $profileTitle "profileBio" $profileBio "profileSocial" $profileSocial "GitInfo" .GitInfo) }}
+	{{ partial "profile.html" (dict "profilePicture" $profilePicture "profileTitle" $profileTitle "profileBio" $profileBio "profileSocial" $profileSocial "GitInfo" .GitInfo "page" .) }}
 
 	{{- /* Right Column: Post List Window */ -}}
 	<main class="post-column h-feed">

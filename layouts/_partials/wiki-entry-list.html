@@ -1,0 +1,14 @@
+{{- /* Partial: wiki-entry-list.html — simplified wiki entry list items (no image, no excerpt)
+	Usage: {{ partial "wiki-entry-list.html" (.Paginate $posts).Pages }}
+*/ -}}
+{{ range . }}
+	<article class="wiki-list-item h-entry">
+		<a href="{{ .RelPermalink }}" class="wiki-entry-title p-name u-url">{{ .Title }}</a>
+		<div class="wiki-entry-meta">
+			<time class="dt-updated" datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2 January 2006" }}</time>
+			{{- with (index (.GetTerms "category") 0) }} in <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+		</div>
+	</article>
+{{ else }}
+	<p class="wiki-empty">No entries yet.</p>
+{{ end }}

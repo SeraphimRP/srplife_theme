@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container home-layout">
+
+	{{ partial "wiki-sidebar.html" . }}
+
+	{{- /* Right Column: Wiki Entry Content Window */ -}}
+	<main class="post-column h-entry">
+		{{ partial "wm-window-top.html" (dict "title" (printf "~/wiki/%s" (.Title | urlize)) "style" "min-height: 80vh;") }}
+
+		<article class="wiki-entry">
+			<header class="wiki-entry-header">
+				<h1 class="post-title p-name">{{ .Title }}</h1>
+				<div class="post-meta">
+					<time class="dt-published" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+					{{- with (index (.GetTerms "category") 0) }} in <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+					({{ .ReadingTime }} minute read)
+					{{ with site.Params.contentRepo }}
+						<a href="{{ . }}/blob/main/content/wiki/{{ $.File.ContentBaseName }}.md" class="post-src-link">[src]</a>
+					{{ end }}
+				</div>
+			</header>
+
+			<section class="gh-content e-content">
+				{{ .Content }}
+			</section>
+		</article>
+
+		{{ partial "wm-window-bottom.html" . }}
+	</main>
+</div>
+{{ end }}

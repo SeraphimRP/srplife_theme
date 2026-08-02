@@ -9,7 +9,7 @@
 	{{ end }}
 
 	<h2 class="profile-name">{{ .profileTitle }}</h2>
-	<div class="profile-bio">{{ .profileBio }}</div>
+	<div class="profile-bio">{{ .profileBio | .page.RenderString }}</div>
 
 	<ul class="profile-social">
 		{{ range sort .profileSocial "order" }}

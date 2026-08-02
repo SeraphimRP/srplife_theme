@@ -1,0 +1,42 @@
+{{- /* Partial: wiki-sidebar.html — Wiki category browser (profile-style aside window)
+	Usage: {{ partial "wiki-sidebar.html" . }}
+	Lists every term in the "category" taxonomy, highlighting the term(s) relevant
+	to the current page (the term page itself, or the category of the current entry).
+*/ -}}
+{{ $currentPermalink := .RelPermalink }}
+{{ $entryCategoryLinks := slice }}
+{{ if eq .Kind "page" }}
+	{{ range .GetTerms "category" }}
+		{{ $entryCategoryLinks = $entryCategoryLinks | append .RelPermalink }}
+	{{ end }}
+{{ end }}
+{{ $wikiRoot := site.GetPage "wiki" }}
+
+<aside class="profile-column">
+	{{ partial "wm-window-top.html" (dict "title" "~/wiki/category") }}
+
+	<nav class="categories">
+		<a
+			class="wm-btn wiki-category-link{{ if and $wikiRoot (eq $wikiRoot.RelPermalink $currentPermalink) }} active{{ end }}"
+			href="{{ with $wikiRoot }}{{ .RelPermalink }}{{ else }}{{ "wiki/" | relURL }}{{ end }}">
+			All
+		</a>
+		{{ range site.Taxonomies.category }}
+			{{ $isActive := or (eq .Page.RelPermalink $currentPermalink) (in $entryCategoryLinks .Page.RelPermalink) }}
+			<a class="wm-btn wiki-category-link{{ if $isActive }} active{{ end }}" href="{{ .Page.RelPermalink }}">
+				{{ .Page.Title }}
+				<span class="wiki-category-count">{{ .Count }}</span>
+			</a>
+		{{ else }}
+			<p class="wiki-category-empty">No categories yet.</p>
+		{{ end }}
+	</nav>
+
+	{{- with .GitInfo }}
+		<div class="profile-git-info">
+			<p>Last updated: {{ .CommitDate.Format "2006-01-02" }} ({{ with site.Params.contentRepo }}<a href="{{ . }}/commit/{{ $.GitInfo.Hash }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ else }}{{ .AbbreviatedHash }}{{ end }})</p>
+		</div>
+	{{- end }}
+
+	{{ partial "wm-window-bottom.html" . }}
+</aside>

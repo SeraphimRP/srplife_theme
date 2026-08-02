@@ -98,16 +98,23 @@ url    = "/about/"
 weight = 2
 
 [[menus.main]]
-name   = "Resources"
-url    = "/resources/"
+name = "Wiki"
+url = "/wiki/"
 weight = 3
 
+[[menus.main]]
+name   = "Resources"
+url    = "/resources/"
+weight = 4
+
 [taxonomies]
-tag = "t"
+tag      = "t"
+category = "category"
 
 [permalinks]
-pages = "/:slug/"
-posts = "/:slug/"
+pages    = "/:slug/"
+posts    = "/:slug/"
+category = "/wiki/category/:slug/"
 
 [markup]
     [markup.highlight]

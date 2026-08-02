@@ -1,0 +1,138 @@
+/* Wiki — category browser (aside) */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wiki-category-link {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--wm-text);
+}
+
+.wiki-category-link.active {
+    background-color: var(--cm-surface1);
+    border-color: var(--wm-accent);
+    color: var(--wm-accent);
+}
+
+.wiki-category-count {
+    font-size: 0.75rem;
+    color: var(--cm-overlay0);
+    margin-left: 2px;
+}
+
+.wiki-category-empty {
+    font-size: 0.85rem;
+    color: var(--wm-text-muted);
+}
+
+/* Wiki — simplified entry list (no image, no excerpt) */
+.wiki-list-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cm-surface0);
+}
+
+.wiki-list-item:last-of-type {
+    border-bottom: none;
+}
+
+.wiki-entry-title {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--cm-text);
+    text-decoration: none;
+}
+
+.wiki-entry-title:hover {
+    color: var(--wm-accent);
+}
+
+.wiki-entry-meta {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    color: var(--wm-text-muted);
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .wiki-entry-meta {
+        white-space: normal;
+        text-align: left;
+    }
+}
+
+.wiki-empty {
+    color: var(--wm-text-muted);
+}
+
+/* Anchor pagination to the bottom of a min-height window, even when the
+   entry list is short enough to leave empty space below it. */
+.paginated-window .wm-window-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.paginated-window .pagination {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* Wiki — inline reference (wikiref shortcode) */
+.wiki-ref {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--wm-text-muted);
+    text-underline-offset: 2px;
+    cursor: help;
+    color: inherit;
+}
+
+.wiki-ref-tooltip {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: max-content;
+    max-width: 280px;
+    background-color: var(--cm-surface0);
+    border: 1px solid var(--cm-surface2);
+    padding: 10px 12px;
+    z-index: 999;
+    text-decoration: none;
+    cursor: default;
+}
+
+.wiki-ref:hover .wiki-ref-tooltip,
+.wiki-ref:focus .wiki-ref-tooltip,
+.wiki-ref:focus-within .wiki-ref-tooltip {
+    display: block;
+}
+
+.wiki-ref-summary {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--cm-subtext0);
+}
+
+.wiki-ref-more {
+    display: block;
+}
+
+/* Wiki — single entry */
+.wiki-entry-header {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cm-surface0);
+}

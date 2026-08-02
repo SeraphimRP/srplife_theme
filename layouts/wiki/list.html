@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="container home-layout">
+
+	{{ partial "wiki-sidebar.html" (dict "GitInfo" .GitInfo "page" .) }}
+
+	{{- /* Right Column: Wiki Entry List Window */ -}}
+	<main class="post-column h-feed">
+		{{ partial "wm-window-top.html" (dict "title" "~/wiki" "style" "min-height: 80vh;" "class" "paginated-window") }}
+		{{ $posts := sort (where (where .Pages "Section" "wiki") "Draft" false) "Title" }}
+		{{ partial "wiki-entry-list.html" (.Paginate $posts).Pages }}
+
+		{{ partial "pagination.html" . }}
+		{{ partial "wm-window-bottom.html" . }}
+	</main>
+</div>
+{{ end }}

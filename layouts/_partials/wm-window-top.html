@@ -9,5 +9,5 @@
 {{ $closeURL := .closeURL | default "" }}
 {{ $style := .style | default "" }}
 {{ $class := .class | default "" }}
-<div class="wm-window{{ with $class }} {{ . }}{{ end }}" data-wm-title="{{ $title }}" {{ with $style }}style="{{ . }}"{{ end }}>
+<div class="wm-window{{ with $class }} {{ . }}{{ end }}" data-wm-title="{{ $title }}" {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
 	<div class="wm-window-content">
