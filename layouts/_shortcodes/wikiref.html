@@ -18,7 +18,17 @@ summary and a "[read more]" link through to it.
 		{{- errorf "The %q shortcode found no wiki entry at content/wiki/%s.md. See %s" $.Name $slug $.Position -}}
 	{{- else -}}
 		{{- $text := or $.Inner $entry.Title -}}
-		{{- $summary := $entry.Summary | plainify | strings.TrimSpace -}}
+		{{- /* Prefer the raw front-matter summary over .Summary: markdown
+			rendering turns a blank line into a paragraph boundary, which
+			plainify then collapses to a single newline when it strips the
+			<p> tags - losing intentional double line breaks. The raw
+			string never goes through that, so it preserves them exactly. */ -}}
+		{{- $summary := "" -}}
+		{{- with $entry.Params.summary -}}
+			{{- $summary = . -}}
+		{{- else -}}
+			{{- $summary = $entry.Summary | plainify | strings.TrimSpace -}}
+		{{- end -}}
 		<span class="wiki-ref" tabindex="0">{{ $text }}<span class="wiki-ref-tooltip"><span class="wiki-ref-summary">{{ $summary }}</span> <a class="wiki-ref-more post-src-link" href="{{ $entry.RelPermalink }}">[read more]</a></span></span>
 	{{- end -}}
 {{- else -}}
