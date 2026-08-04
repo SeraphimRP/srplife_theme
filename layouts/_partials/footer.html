@@ -19,6 +19,6 @@
 		<a href="{{ "feed.xml" | absURL }}"><img src="{{ "images/88x31/rss.gif" | relURL }}" /></a>
 		<br />
 		<br />
-		<a href="https://xn--sr8hvo.ws/previous">←</a> An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/next">→</a>
+        {{ printf "{{< abbv \"The content of other websites in the webring is not inherently endorsed by me and may not reflect my opinions.\" >}}<a href=\"https://xn--sr8hvo.ws/previous\">←</a> An <a href=\"https://xn--sr8hvo.ws\">IndieWeb Webring</a> 🕸💍 <a href=\"https://xn--sr8hvo.ws/next\">→</a>{{< /abbv >}}" | .RenderString }}
 	</p>
 </footer>
