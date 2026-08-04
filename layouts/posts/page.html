@@ -6,9 +6,9 @@
 				{{ with $url := .Params.cover }}
 					<figure class="post-image">
 						{{ if strings.HasPrefix $url "http" }}
-							<img src="{{ $url }}" alt="{{ $.Title }}" />
+							<img src="{{ $url }}" alt="{{ or $.Params.cover_alt $.Title }}" />
 						{{ else }}
-							<img src="./{{ $url }}" alt="{{ $.Title }}" />
+							<img src="./{{ $url }}" alt="{{ or $.Params.cover_alt $.Title }}" />
 						{{ end }}
 					</figure>
 				{{ end }}

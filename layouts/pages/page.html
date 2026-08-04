@@ -8,7 +8,7 @@
 
 					{{ with .Params.feature_image }}
 						<figure class="post-image">
-							<img src="{{ . }}" alt="{{ $.Title }}" style="
+							<img src="{{ . }}" alt="{{ or $.Params.feature_image_alt $.Title }}" style="
 								width: 100%;
 								height: auto;
 								margin: 20px 0;

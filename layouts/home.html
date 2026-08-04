@@ -17,9 +17,9 @@
 				{{ with $url := .Params.cover }}
 					<a href="{{ $p.RelPermalink }}" class="post-card-image-link">
 						{{- if strings.HasPrefix $url "http" }}
-							<img class="post-feature-image" src="{{ $url }}" alt="{{ $.Title }}" />
+							<img class="post-feature-image" src="{{ $url }}" alt="{{ or $.Params.cover_alt $.Title }}" />
 						{{- else }}
-							<img class="post-feature-image" src="{{ $p.RelPermalink | strings.TrimSuffix "/" }}{{ $url }}" alt="{{ $.Title }}" />
+							<img class="post-feature-image" src="{{ $p.RelPermalink | strings.TrimSuffix "/" }}{{ $url }}" alt="{{ or $.Params.cover_alt $.Title }}" />
 						{{- end }}
 					</a>
 				{{ end }}
