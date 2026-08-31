@@ -17,8 +17,21 @@
 					{{ else if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
 						{{ $isActive = true }}
 					{{ end }}
+
+                    {{ if and $isActive (hasPrefix $pageUrl "/wiki/about") (eq .Name "Wiki") }}
+                        {{ $isActive = false }}
+                    {{ end }}
 					<li>
-						<a href="{{ .URL }}" class="wm-workspace-indicator{{ if $isActive }} active{{ end }}">{{ .Name }}</a>
+                    <a href="{{ if .HasChildren }}#{{ else }}{{ .URL }}{{ end }}" class="wm-workspace-indicator{{ if $isActive }} active{{ end }}">{{ .Name }}</a>
+                        {{ if .HasChildren }}
+                        <ul class="sub-nav">
+                            {{ range .Children }}
+                            <li>
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
 					</li>
 				{{ end }}
 			</ul>
