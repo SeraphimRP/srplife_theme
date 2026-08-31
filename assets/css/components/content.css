@@ -59,9 +59,16 @@
 
 .gh-content pre {
     padding: 1em;
-    border: 1px solid var(--cm-surface1);
+    border: 1px solid var(--cm-mauve);
     background-color: var(--cm-mantle);
     overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+.gh-content :not(pre) > code {
+    padding: 2px;
+    border: 1px solid var(--cm-mauve);
+    background-color: var(--cm-mantle);
     margin: 1.5em 0;
 }
 
