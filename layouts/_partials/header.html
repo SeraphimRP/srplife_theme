@@ -22,8 +22,8 @@
                         {{ $isActive = false }}
                     {{ end }}
 					<li>
-                    <a href="{{ if .HasChildren }}#{{ else }}{{ .URL }}{{ end }}" class="wm-workspace-indicator{{ if $isActive }} active{{ end }}">{{ .Name }}</a>
                         {{ if .HasChildren }}
+                        <span class="wm-workspace-indicator{{ if $isActive }} active{{ end }}">{{ .Name }}</span>
                         <ul class="sub-nav">
                             {{ range .Children }}
                             <li>
@@ -31,6 +31,8 @@
                             </li>
                             {{ end }}
                         </ul>
+                        {{ else }}
+                        <a href="{{ .URL }}" class="wm-workspace-indicator{{ if $isActive }} active{{ end }}">{{ .Name }}</a>
                         {{ end }}
 					</li>
 				{{ end }}

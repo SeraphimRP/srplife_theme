@@ -40,7 +40,7 @@
     display: none;
     position: absolute;
     text-align: left;
-    min-width: 130px;
+    min-width: 100px;
     width: fit-content;
     background-color: var(--cm-surface0);
     border: 1px solid var(--cm-surface2);
@@ -63,6 +63,10 @@
     background-color: var(--cm-surface1);
     text-decoration: none;
     border-bottom: 2px solid var(--cm-mauve);
+}
+
+.system-bar-nav ul li:hover {
+    cursor: pointer;
 }
 
 .system-bar-nav ul li:hover .sub-nav {
